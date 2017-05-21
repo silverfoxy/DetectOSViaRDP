@@ -7,12 +7,13 @@ This script is based on https://github.com/ztgrace/sticky_keys_hunter
 apt-get install xdotool imagemagick rdesktop bc parallel
 
 ### Running the script
-Run rdpss.sh iplist.txt
+rdpss.sh iplist.txt
 * **iplist.txt**: is a text file containing ip addresses (1 address per line)
 * Customize **$LIMIT** variable in rdpss.sh (default: 2) for parallel sessions (Tested with $LIMIT=50, checks ~75 ips per minute)
 ## Detecting OS From Screenshots			
 ### Requirements
 pip install opencv-python numpy
+
 python DetectOS.py ./images/ ./marker-xp.jpg > iplistxp.txt
 * **./images**: contains screenshots taken by rdpss.sh script
 * **marker-xp.jpg**: is a part of windows XP login screen that's specific to this OS, if this image is found within the screenshot, then we conclude that the operating system was Windows XP.
@@ -20,7 +21,7 @@ python DetectOS.py ./images/ ./marker-xp.jpg > iplistxp.txt
 * By changing the marker image we can detect other operating systems. (XP and 2003 are currently tested and available within this repo)
 
 # Manually Testing your setup
-## Copy Detected Images to Another Directory To Visually Test
+## Copy Detected Images to Another Directory for Visual Verification
 copyselected.sh iplistxp.txt images images-xp
 * **iplistxt.txt**
 * **images**
